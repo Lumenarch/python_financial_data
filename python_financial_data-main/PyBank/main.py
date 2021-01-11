@@ -1,20 +1,10 @@
-# First we'll import the os module
-# This will allow us to create file paths across operating systems
 import os
-
-# Module for reading CSV files
 import csv
 
 
 files = os.listdir()
 
 now = os.getcwd()
-
-#print(now)
-
-#for file in files:
-#print(os.path.join(now,'.vscode\python_financial_data-main\PyBank\Resources'))
-
 
 csvpath = os.path.join(now, '.vscode\python_financial_data-main\PyBank\Resources', 'budget_data.csv')
 txtpath = os.path.join(now, '.vscode\python_financial_data-main\PyBank\Analysis')
@@ -28,10 +18,9 @@ greatest_profit = 0 #This stores the largest positive number
 greatest_loss = 0 #This stores the largest negative number
 
 with open(csvpath) as csvfile:
-     # CSV reader specifies delimiter and variable that holds contents
+    
     csvreader = csv.reader(csvfile, delimiter=',')
 
-      # Read the header row first (skip this step if there is now header)
     csv_header = next(csvreader)
 
     # Read each row of data after the header
